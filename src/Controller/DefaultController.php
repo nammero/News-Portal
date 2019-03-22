@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Post\Service\HomePageServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -12,8 +13,12 @@ class DefaultController extends AbstractController
      *
      * @return Response
      */
-    public function index(): Response
+    public function index(HomePageServiceInterface $homePageService): Response
     {
-        return $this->render('default/index.html.twig');
+        $posts = $homePageService->getPosts();
+
+        return $this->render('default/index.html.twig', [
+            'posts' => $posts,
+        ]);
     }
 }
