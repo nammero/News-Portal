@@ -2,3 +2,8 @@
 index:
     path: /
     controller: App\Controller\DefaultController::index
+
+# Categories pages
+category:
+    path: /category/{name}
+    controller: App\Controller\CategoryController::category

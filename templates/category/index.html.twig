@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% set category_name=app.request.get('name') %}
+    <div class="container">
+        <h1 class="col-12">{{ category_name }}</h1>
+        <div class="col-12">
+            {% if category_name == 'World' %}s
+                This category about news from the whole world
+            {% elseif category_name == 'Sport' %}
+                Every sport from around the world
+            {% elseif category_name == 'IT' %}
+                Information technology
+            {% elseif category_name == 'Science' %}
+                Scientific news
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
