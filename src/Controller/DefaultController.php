@@ -12,6 +12,7 @@ class DefaultController extends AbstractController
      * Renders site home page.
      *
      * @param HomePageServiceInterface $homePageService
+     *
      * @return Response
      */
     public function index(HomePageServiceInterface $homePageService): Response
