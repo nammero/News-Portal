@@ -24,7 +24,7 @@ final class FakeHomePageService implements HomePageServiceInterface
         $collection = new Collection();
         $faker = \Faker\Factory::create();
 
-        for ($i = 0; $i < $this->postsLimit; $i++) {
+        for ($i = 0; $i < $this->postsLimit; ++$i) {
             $post = new PostModel(
                 $faker->randomDigit,
                 $faker->randomElement(['World', 'Sport', 'IT', 'Science']),
